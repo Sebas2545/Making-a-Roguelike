@@ -67,7 +67,7 @@ class GameMap:
         Otherwise, the default is "SHROUD"
         """
 
-        console.tiles_rgb[0 : self.width, 0 : self.height] = np.select(
+        console.rgb[0 : self.width, 0 : self.height] = np.select(
             condlist=[self.visible, self.explored], # checks is a array element is True, searching arrays left to right
             choicelist=[self.tiles["light"], self.tiles["dark"]], # if true in visible, tile is "light", else if explored is true, tile is "dark"
             default=tile_types.SHROUD, # if neither is true, tile is shrouded
