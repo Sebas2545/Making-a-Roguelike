@@ -15,7 +15,6 @@ def save_game(handler: input_handlers.BaseEventHandler, filename: str) -> None:
         handler.engine.save_as(filename)
         print("Game Saved")
 
-
 def main() -> None:
     screen_width = 80
     screen_height = 50

@@ -13,6 +13,7 @@ if TYPE_CHECKING:
     from components.equippable import Equippable
     from components.fighter import Fighter
     from components.inventory import Inventory
+    from components.letters import Letters
     from components.level import Level
     from game_map import GameMap
 
@@ -99,6 +100,7 @@ class Actor(Entity):
         fighter: Fighter,
         inventory: Inventory,
         level: Level,
+        letters: Letters,
     ):
         super().__init__(
             x=x,
@@ -120,6 +122,9 @@ class Actor(Entity):
 
         self.inventory = inventory
         self.inventory.parent = self
+
+        self.letters = letters
+        self.letters.parent = self
 
         self.level = level
         self.level.parent = self
